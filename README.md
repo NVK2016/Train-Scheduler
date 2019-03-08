@@ -12,7 +12,7 @@ with the help of MOment.js we are displaying the next arrival & minutes away for
 * Firebase - Cloud Database used to store train data schedules 
 
 ## Access the Train Schedule : 
-<a href=" https://nvk2016.github.io/Train-Scheduler/">Chugga Chugga too too !! </a>
+<a href="https://nvk2016.github.io/Train-Scheduler/">Chugga Chugga choo choo !! </a>
 
 ## Train Station Screenshots: 
 ![On load] ()
