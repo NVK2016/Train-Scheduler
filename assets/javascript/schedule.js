@@ -19,6 +19,7 @@ $(document).ready(function () {
     // .format("hh:mm A") here hh- stands for 1-12 hr, mm for minutues , A for am/pm  [http://momentjs.com/docs/#/parsing/string-format/] 
     var currentTime = moment().format("hh:mm A"); //Military time format 
     $("#current-time").append(currentTime); 
+    setInterval($("#current-time").append(currentTime), 60000); 
 
     var trainName , trainDest ;
     var firstTrainTime = 00;
@@ -48,6 +49,12 @@ $(document).ready(function () {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
 
+        //Clear fields after inserting 
+        $("#train-name-input").val(""); 
+        $("#destination-input").val("");
+        $("#first-train-input").val("");
+        $("#frequency-input").val("");
+
     });
 
     //
@@ -61,7 +68,7 @@ $(document).ready(function () {
         firstTrainTime = childSnapshot.val().firstTrain; 
         trainFrequency = childSnapshot.val().frequency; 
 
-        var nextArrival , minutesAway; 
+        var nextTrainArrival , minutesAway; 
         
         // First trains is 06:10 am , frequency is set every 20 min 
         //current time is 06:45 am , 
@@ -70,13 +77,29 @@ $(document).ready(function () {
         //time difference ? by frequency 
         // To calculate the next arrival time 
         
-        
+        // Convert time 
+        // First Time (pushed back 1 year to make sure it comes before current time)
+        var timeConverted = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+        console.log("timeConverted:" +timeConverted);
+
+         //difference between first time and current time 
+         var timeDifference = moment().diff(moment(timeConverted),"m");
+         console.log("timeDifference:" + timeDifference);
+
+         //minutes since last train left diffTime%frequency
+        var timeApart = timeDifference % trainFrequency;
+        console.log("time apart:" +timeApart);
+
+        minutesAway = trainFrequency - timeApart;
+        // To calculate the arrival time, add minutesAwat=y to the currrent time
+        nextTrainArrival = moment().add(minutesAway,"m").format("hh:mm A");
+
         //Append data to rows 
         var newRow = $("<tr>");
         newRow.append("<td>" + trainName + "</td>");
         newRow.append("<td>" + trainDest + "</td>");
         newRow.append("<td>" + trainFrequency + "</td>");
-        newRow.append("<td>" + nextArrival  + "</td>"); //blank data 
+        newRow.append("<td>" + nextTrainArrival  + "</td>"); //blank data 
         newRow.append("<td>" + minutesAway+ "</td>"); //blank data 
 
         // Append row to table
