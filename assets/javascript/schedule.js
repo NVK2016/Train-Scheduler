@@ -86,4 +86,14 @@ $(document).ready(function () {
     }, function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
     });
+
+    //Display in descending order 
+    // dataRef.ref().orderByChild("frequency").on("child_added", function(snapshot) {
+
+    //     // Change the HTML to reflect
+    //     $("train-name-input").text(snapshot.val().trainName);
+    //    $("#destination-input").text(snapshot.val().destination);
+    //     $("#first-train-input").text(snapshot.val().firstTrainTime);
+    //     $("#frequency-input").text(snapshot.val().frequency);
+    //   });
 }); 
