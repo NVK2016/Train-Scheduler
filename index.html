@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
@@ -29,7 +29,75 @@
 <body>
 
     <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1 class="text-center">Train Scheduler</h1>
+            <!-- <h3 class="text-center">Hear the whistle blow, the engine roar, Hear the wheels say clinkitty clank!</h3> -->
+            <h3 class="text-center">There is always a <bold style="color: red;">light</bold> at the end of a tunnel! Actually I think that's a <bold style="color: red;">train</bold>.</h3>
+            <!-- <span id="train-gif"><img src="assets/images/animated-gifs-rudebootie.gif" /></span> -->
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- Current Train Schedule-->
+                <div class="card mb-4">
+                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table table-sm table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id="train-schedule-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Add Train  -->
+                <div class="card mb-4">
+                    <div class="card-header">Add Train</div>
+                    <div class="card-body">
+
+                        <!-- Entry Form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name-input">Train Name</label>
+                                <input class="form-control" id="train-name-input" placeholder="Thomas Train" type="text">
+                            </div>
+                            <div class="form-group">
+                                    <label for="destination-input">Destination</label>
+                                    <input class="form-control" id="destination-input" placeholder="Mars" type="text">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="start-input">First Train Time(HH:MM - military time)</label>
+                                    <input class="form-control" id="start-input" placeholder="01/08/1989" type="text">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="rate-input">Frequency (min)</label>
+                                    <input class="form-control" id="frequency-input" placeholder="15" type="number">
+                                  </div>
+                                  <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+                                </form>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <!-- JQUERY FILE  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
