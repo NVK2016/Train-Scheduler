@@ -15,6 +15,6 @@ with the help of MOment.js we are displaying the next arrival & minutes away for
 <a href="https://nvk2016.github.io/Train-Scheduler/">Chugga Chugga choo choo !! </a>
 
 ## Train Station Screenshots: 
-![On load] (https://github.com/NVK2016/Train-Scheduler/blob/master/ScreenShot-TrainTable.png)
-![Add Train] (https://github.com/NVK2016/Train-Scheduler/blob/master/ScreenShot-AddTrain.png)
+![On load](https://github.com/NVK2016/Train-Scheduler/blob/master/ScreenShot-TrainTable.png)
+![Add Train](https://github.com/NVK2016/Train-Scheduler/blob/master/ScreenShot-AddTrain.png)
 
