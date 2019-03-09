@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -27,17 +28,18 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
             <h1 class="text-center">Train Scheduler</h1>
-            <h4 class="text-center">There is always a <bold style="color: red;">light</bold> at the end of a tunnel! Actually I think that's a <bold style="color: red;">train</bold>.</h4>
+            <h4 class="text-center">There is always a <bold style="color: red;">light</bold> at the end of a tunnel!
+                Actually I think that's a <bold style="color: red;">train</bold>.</h4>
             <img src="assets/images/animated-gifs-rudebootie.gif" id="train-gif" />
-            
+
         </div>
 
         <div class="row">
-
             <div class="col-md-12">
                 <!-- Current Train Schedule-->
                 <div class="card mb-4">
-                    <div class="card-header" id="current-time" style="background-color:teal; color:whitesmoke;">Current Train Schedule as of </div>
+                    <div class="card-header" id="current-time" style="background-color:teal; color:whitesmoke;">Current
+                        Train Schedule as of </div>
                     <div class="card-body">
                         <table class="table table-sm table-hover" id='train-table'>
                             <thead class="thead-dark">
@@ -71,20 +73,22 @@
                                 <input class="form-control" id="train-name-input" placeholder="Train Name" type="text">
                             </div>
                             <div class="form-group">
-                                    <label for="destination-input">Destination</label>
-                                    <input class="form-control" id="destination-input" placeholder="Destination" type="text">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="first-train-input">First Train Time(HH:MM - military time)</label>
-                                    <input class="form-control" id="first-train-input" placeholder="First Train Time" type="text" format="00:00">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="rate-input">Frequency (min)</label>
-                                    <input class="form-control" id="frequency-input" placeholder="Frequency" type="number">
-                                  </div>
-                                  <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
-                                  <button type="reset" class="btn btn-warning float-right mr-2">Clear</button>
-                                </form>                    
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" placeholder="Destination"
+                                    type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="first-train-input">First Train Time(HH:MM - military time)</label>
+                                <input class="form-control" id="first-train-input" placeholder="First Train Time"
+                                    type="time" format="00:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" placeholder="Frequency" type="number">
+                            </div>
+                            <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+                            <button type="reset" class="btn btn-warning float-right mr-2">Clear</button>
+                        </form>
                     </div>
                 </div>
             </div>
