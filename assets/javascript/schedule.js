@@ -29,7 +29,7 @@ $(document).ready(function () {
     //EVENT LISTINERS 
     //----------------------------
 
-    $("#add-train-btn").on("click", function (event) {
+    $("#add-train-btn").on("submit", function (event) {
 
         //Stops the page from reloading again 
         event.preventDefault();
